@@ -2,11 +2,7 @@
 # disableusb.py
 
 from winreg import *
-import sys
-import win32api
-import os
-import socket
-import win32net
+import os, sys, win32api, socket, win32net
 
 def write_key(value):
     try:
