@@ -22,7 +22,7 @@ def write_key(value):
     
 def check_user(machine_name, user_name):
     # Check if user is part of the administrator's group
-    user_name = 'ADDomainHere\\' + user_name
+    user_name = os.environ['UserDomain'] + '\\' + user_name
     group_membership = groups = win32net.NetUserGetLocalGroups(machine_name, user_name)
     if 'Administrators' in group_membership:
         return True
